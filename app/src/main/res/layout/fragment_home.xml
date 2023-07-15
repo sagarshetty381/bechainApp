@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rb_color="@color/colorOrange"
+        app:rb_duration="2000"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="4"
+        app:rb_scale="6">
+
+        <TextView
+            android:id="@+id/roomTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/centreImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="150dp"
+            android:text="@string/room"
+            android:textColor="@color/colorBlue"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/centreImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="125dp"
+            android:text="@string/meet_people"
+            android:textColor="@color/colorOrange"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/centreImage"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/butterfly_side_view" />
+
+        <LinearLayout
+            android:id="@+id/searchingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/centreImage"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/searching"
+                android:textColor="@color/colorOrange"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/breath_in"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/skip_your_best"
+                android:textColor="@color/colorOrange"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </com.skyfishjy.library.RippleBackground>
+
+    <LinearLayout
+        android:id="@+id/cardsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
+
+        <com.lorentzos.flingswipe.SwipeFlingAdapterView
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="4"
+
+            app:SwipeFlingStyle="@style/SwipeFling"
+            app:min_adapter_stack="0"
+            app:rotation_degrees="15.5"
+            tools:context=".MainActivity" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/dislike_post"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/rounded_rect_shape"
+                android:padding="10dp"
+                android:src="@drawable/ic_close"
+                android:visibility="gone"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/like_post"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/rounded_rect_shape"
+                android:padding="10dp"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reportUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_warning_24"
+            app:tint="@color/colorOrange" />
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/colorOrange"-->
+<!--            android:text="Report"/>-->
+    </LinearLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blur_match_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+            <ImageView
+                android:id="@+id/closeMatchLayout"
+                android:layout_width="35dp"
+                android:layout_height="0dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="5"
+                android:src="@drawable/ic_close"
+                app:tint="@color/colorBlue" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:layout_weight="55"
+                android:src="@drawable/match_indc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:text="@string/congratulations"
+                android:textColor="@color/colorOrange"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="10"
+                android:text="@string/you_got_chained"
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sayHiButton"
+                android:layout_width="150dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:layout_weight="10"
+                android:background="@color/colorBlue"
+                android:text="@string/say_hi"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blur_pause_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorOrange"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Click on the centre button to start your matching.."
+                android:textColor="@color/colorBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorBlue" />
+        </LinearLayout>
+    </eightbitlab.com.blurview.BlurView>
+
+</RelativeLayout>

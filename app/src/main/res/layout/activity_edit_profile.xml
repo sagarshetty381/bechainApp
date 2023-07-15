@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileActivity">
+
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/action_bar_layout" />
+
+    <ImageView
+        android:id="@+id/confirm_form"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/confirm" />
+
+    <ImageView
+        android:id="@+id/cancel_form"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/cancel" />
+
+    <TextView
+        android:id="@+id/headText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_bar"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/edit_profile_text"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBlue"
+                android:padding="10dp"
+                android:text="Personal Info"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameTIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:endIconMode="clear_text"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameTEL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/fullname"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enterBioTIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                app:counterEnabled="true"
+                app:counterMaxLength="1000"
+                app:counterOverflowTextAppearance="@color/colorOrange"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/enterBioTEL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top|left"
+                    android:hint="@string/enter_bio"
+                    android:inputType="textMultiLine"
+                    android:lines="6"
+                    android:maxLength="1000"
+                    android:maxLines="5"
+                    android:minLines="2"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/professionTIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:endIconMode="clear_text"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/professionTEL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/profession"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hobbiesTIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:counterOverflowTextAppearance="@color/colorOrange"
+                app:endIconMode="clear_text"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hobbiesTEL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/hobbies"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorBlue"
+                android:padding="10dp"
+                android:text="@string/preferences"
+                android:textColor="@color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp">
+
+                <TextView
+                    android:id="@+id/agePreferenceTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agePreference"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/ageRangeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/agePrefRangeRS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/slider_background"
+                android:elevation="5dp"
+                android:stepSize="1"
+                android:valueFrom="18"
+                android:valueTo="80"
+                app:thumbColor="@color/colorOrange"
+                app:thumbRadius="6dp"
+                app:trackColorActive="@color/colorOrange"
+                app:trackColorInactive="@color/greyish"
+                app:trackHeight="3dp"
+                app:values="@array/double_slider_value" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

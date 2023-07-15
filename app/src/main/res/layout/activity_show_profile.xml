@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ShowProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="80">
+
+            <ProgressBar
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"/>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <ImageView
+                android:id="@+id/swipeLeftIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="#80000000"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="20dp"
+                android:src="@drawable/stepper_left"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/swipeRightIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="#80000000"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="20dp"
+                android:src="@drawable/stepper_right"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/backButtonIV"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/circle_shape"
+        android:src="@drawable/back"
+        app:tint="@color/white" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/bottom_sheet_shape"
+        android:padding="20dp"
+        app:behavior_peekHeight="100dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/black" />
+
+            <ImageView
+                android:id="@+id/closeBottomSheetIV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_arrow_circle_up"
+                app:tint="@color/colorOrange" />
+
+            <LinearLayout
+                android:id="@+id/nameContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="Name"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/greyish" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bioContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bioTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Bio"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/greyish" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/professionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/professionTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/profession"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/greyish" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hobbiesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hobbiesTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/hobbies"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/greyish" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

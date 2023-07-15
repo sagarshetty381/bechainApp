@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    tools:context=".PhoneAuthActivity">
+
+    <include
+        android:id="@+id/top_logo"
+        layout="@layout/action_bar_layout"/>
+
+    <TextView
+        android:id="@+id/verifyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center_horizontal"
+        android:text="@string/lets_verify"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:id="@+id/numberContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verifyText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="40dp">
+
+        <ImageView
+            android:id="@+id/add_phone"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/add_phone" />
+
+        <TextView
+            android:id="@+id/country_code"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/add_phone"
+            android:background="@color/colorBlue5alpha"
+            android:gravity="center"
+            android:text="@string/country_code"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlue"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/country_code"
+            android:background="@color/colorBlue5alpha"
+            android:hint="@string/enter_phone_num"
+            android:padding="15dp"
+            android:inputType="phone"
+            android:textSize="15sp"
+            android:layout_toEndOf="@id/country_code" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/verifyButton"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorOrange"
+        android:layout_below="@id/numberContainer"
+        android:text="@string/verify"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/authQueries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_query"
+        android:layout_below="@id/verifyButton"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20sp"/>
+
+</RelativeLayout>

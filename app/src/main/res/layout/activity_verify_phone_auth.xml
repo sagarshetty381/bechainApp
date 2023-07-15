@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    tools:context=".VerifyPhoneAuthActivity">
+
+    <include layout="@layout/action_bar_layout"/>
+
+    <RelativeLayout
+        android:id="@+id/otpContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/enterOTPText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/enter_otp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlue"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/otp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/enterOTPText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorBlue5alpha"
+            android:gravity="center_horizontal"
+            android:hint="@string/enter_otp"
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/verifyOTPButton"
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/otp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorOrange"
+            android:text="@string/proceed"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/otpQueries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/verifyOTPButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/otp_queries"
+            android:textColor="@color/colorBlue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/verifyOTPButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/otpQueries"
+            android:layout_toRightOf="@id/otpQueries"
+            android:text="@string/resend"
+            android:textColor="@color/colorOrange" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/ProgressBarTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otpContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="@string/detect_otp"
+        android:textColor="@color/colorBlue"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>

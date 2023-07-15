@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/barLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlue"
+            app:menu="@menu/chat_screen_options">
+
+            <ImageView
+                android:id="@+id/backButtonIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_back_icon" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/chatImageIV"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_toEndOf="@id/backButtonIV"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/userNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/chatImageIV"
+                android:layout_toRightOf="@id/chatImageIV"
+                android:text="@string/username"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/barLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="60dp"-->
+    <!--        android:background="@color/colorBlue">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/backButtonIV"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="70dp"-->
+    <!--            android:src="@drawable/ic_back_icon" />-->
+
+    <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--            android:id="@+id/chatImageIV"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            android:layout_toEndOf="@id/backButtonIV"-->
+    <!--            android:layout_toRightOf="@id/backButtonIV"-->
+    <!--            android:src="@drawable/ic_launcher_background" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/userNameTV"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:layout_toEndOf="@id/chatImageIV"-->
+    <!--            android:layout_toRightOf="@id/chatImageIV"-->
+    <!--            android:text="@string/username"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="18sp" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/videoCallIV"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:layout_alignParentEnd="true"-->
+    <!--            android:layout_alignParentRight="true"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:layout_margin="10dp"-->
+    <!--            android:src="@drawable/video_call" />-->
+
+    <!--    </RelativeLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sendChatContainer"
+        android:layout_below="@id/barLayout"
+        android:alpha="0.4" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatsRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sendChatContainer"
+        android:layout_below="@id/barLayout" />
+
+    <RelativeLayout
+        android:id="@+id/sendChatContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:layout_margin="2dp"
+        android:padding="5dp">
+
+        <EditText
+            android:id="@+id/msgEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="3dp"
+            android:layout_toLeftOf="@id/sendBt"
+            android:background="@android:color/transparent"
+            android:hint="@string/type_msg" />
+
+        <ImageView
+            android:id="@+id/sendBt"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:src="@drawable/sent_orange" />
+
+    </RelativeLayout>
+</RelativeLayout>

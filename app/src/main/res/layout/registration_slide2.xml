@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top_logo"
+        layout="@layout/action_bar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_imageIV"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/male_default_image" />
+
+        <Button
+            android:id="@+id/uploadImageBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/white_button_shape"
+            android:text="@string/uploadImage"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="false"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/colorBlue"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/proceedBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:fabCustomSize="70dp"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        android:layout_margin="20dp"
+        android:src="@drawable/back"
+        android:rotation="180"/>
+
+</RelativeLayout>
